@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Padel Score</string>
+    <string name="team1_default">Team 1</string>
+    <string name="team2_default">Team 2</string>
+    <string name="reset_match">Reset Match</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+</resources>

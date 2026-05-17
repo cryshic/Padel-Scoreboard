@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Keep screen on during active match -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Haptic vibration feedback -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--
+        Declare this is a standalone Wear OS app.
+        Required for distribution on the Play Store for Wear OS.
+    -->
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <!--
+        Standalone app — does not require a paired phone app.
+        Critical for Pixel Watch direct install.
+    -->
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault"
+        android:keepScreenOn="false">
+
+        <!-- Main launcher activity for Wear OS -->
+        <activity
+            android:name=".presentation.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:taskAffinity=""
+            android:excludeFromRecents="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- Required Wear OS category -->
+                <category android:name="com.google.android.wearable.app.category.WEARABLE" />
+            </intent-filter>
+        </activity>
+
+        <!--
+            Metadata: marks as standalone Wear app (no phone companion needed).
+            Value 1 = standalone. Required for Pixel Watch / standalone Wear OS.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+    </application>
+</manifest>
